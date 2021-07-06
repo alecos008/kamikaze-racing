@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamikaze Racing</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <div id="splash-screen" class="container">
+        <img src="./images/logo.svg" width="500px" alt="logo">
+        <button id="start-btn">Start Race!</button>
+    </div>
+
+    <canvas id="my-canvas" width="800" height="600"></canvas>
+
+    <div id="gameover-screen" class="container">
+        <img src="./images/gameover.jpg" width="500px" alt="gameover">
+        <button id="restart-btn">Wanna Try Again!?</button>
+    </div>
+    <script src="main.js"></script>
+    <script src="./classes/game.js"></script>
+    <script src="./classes/vehicle.js"></script>
+</body>
+</html>

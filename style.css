@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#start-btn, #restart-btn {
+   padding: 20px; 
+   font-size: 20px;
+   margin-top: 40px;
+}
+
+#my-canvas {
+   
+    display: none;
+    margin: 0 auto;
+}
+#gameover-screen {
+   display: none;
+}

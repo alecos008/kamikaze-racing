@@ -27,5 +27,9 @@ window.addEventListener("keydown", (event) => {
         gameObj.vehicle.moveVehicleLeft();
     } else if (event.code === "ArrowRight") {
         gameObj.vehicle.moveVehicleRight();
+    } else if (event.code === "ArrowDown") {
+        gameObj.vehicle.moveVehicleDown();
+    } else if (event.code === "ArrowUp") {
+        gameObj.vehicle.moveVehicleUp();
     }
 })

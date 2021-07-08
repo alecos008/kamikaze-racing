@@ -22,5 +22,15 @@ class Vehicle {
             this.x += 80;
         }
     }
+    moveVehicleUp = () => {
+        if (this.y > 0) {
+            this.y -= 40;
+        }
+    }
+    moveVehicleDown = () => {
+        if (this.y < canvas.height - this.height) {
+            this.y += 40;
+        }
+    }
 
 }

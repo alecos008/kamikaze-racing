@@ -1,7 +1,7 @@
 class Obstacle {
-    constructor(){
-        this.x = 80;
-        this.y = 80;
+    constructor(xPos){
+        this.x = xPos;
+        this.y = 0;
         this.width = 80;
         this.height = 80;
         this.speed = 1;

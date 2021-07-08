@@ -1,9 +1,9 @@
 class Vehicle {
     constructor(){
-        this.x = canvas.width / 2;
-        this.y = canvas.height - 80;
         this.width = 80;
         this.height = 80;
+        this.x = canvas.width / 2;
+        this.y = canvas.height - this.height;
         this.image = new Image();
         this.image.src = "../images/vehicle.png";
 
@@ -13,13 +13,13 @@ class Vehicle {
     }
     moveVehicleLeft = () => {
         if (this.x > 0){
-            this.x -= 40;
+            this.x -= 80;
         }
     }
     moveVehicleRight = () => {
         if (this.x < canvas.width - this.width) {
 
-            this.x += 40;
+            this.x += 80;
         }
     }
 

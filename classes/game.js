@@ -9,7 +9,7 @@ class Game {
     }
     generateObstacles = () => {
         
-        if (this.obstaclesArr.length === 0 || this.obstaclesArr[this.obstaclesArr.length-1].y === canvas.height / 10){
+        if (this.obstaclesArr.length === 0 || this.obstaclesArr[this.obstaclesArr.length-1].y === 80){
             let randIndex = Math.floor(Math.random() * this.obstaclesArrPos.length);
             
             let obstacle = new Obstacle(this.obstaclesArrPos[randIndex]);

@@ -6,7 +6,8 @@ let splashScreen = document.querySelector('#splash-screen');
 let gameoverScreen = document.querySelector('#gameover-screen');
 let startButton = document.querySelector('#start-btn');
 let restartButton = document.querySelector('#restart-btn');
-
+let scoreElement = document.querySelector('h2')
+let scoreNum = document.querySelector('#score')
 //game variable
 let gameObj;
 
@@ -18,6 +19,9 @@ startButton.addEventListener('click', ()=> {
     //hiding splashScreen once game starts
     splashScreen.style.display = "none";
 
+    // displaying score
+    scoreElement.style.display = "flex"
+
     gameObj = new Game();
     gameObj.gameLoop();
 })
@@ -25,8 +29,7 @@ restartButton.addEventListener('click', () => {
     //Displaying canvas once game starts
     canvas.style.display = "block";
 
-    //hiding splashScreen once game starts
-    splashScreen.style.display = "none";
+    
 
     //hidding gameoverScreen once game starts
     gameoverScreen.style.display = "none";

@@ -24,3 +24,7 @@
 #gameover-screen {
    display: none;
 }
+h2 {
+    padding-top: 15px;
+    display: none;
+}

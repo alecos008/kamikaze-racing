@@ -35,7 +35,7 @@ class Game {
 
        this.obstaclesArr.forEach(eachObs => {
            if (this.vehicle.vehicleObstacleCollision(eachObs)) {
-               //stoping game
+            //stoping game
             this.isGameRunning = false;
             //hidding the canvas
             canvas.style.display = "none";
@@ -49,7 +49,8 @@ class Game {
            this.timeInGame++;
            console.log(this.timeInGame)
        }
-    
+       
+       scoreNum.innerHTML = this.timeInGame;
 
         //3. drawing elements
          ctx.drawImage(this.bg, 0, 0, canvas.width, canvas.height)

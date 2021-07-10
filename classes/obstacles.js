@@ -6,7 +6,7 @@ class Obstacle {
         this.height = 80;
         this.speed = 1;
         this.image = new Image();
-        this.image.src = "../images/motorcycle-obstacle.jpg"
+        this.image.src = "../images/motorcycle-obstacle.png"
     }
     drawObstacle = () => {
         ctx.drawImage(this.image,this.x, this.y, this.width, this.height)

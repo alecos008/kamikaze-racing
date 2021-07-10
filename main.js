@@ -21,6 +21,19 @@ startButton.addEventListener('click', ()=> {
     gameObj = new Game();
     gameObj.gameLoop();
 })
+restartButton.addEventListener('click', () => {
+    //Displaying canvas once game starts
+    canvas.style.display = "block";
+
+    //hiding splashScreen once game starts
+    splashScreen.style.display = "none";
+
+    //hidding gameoverScreen once game starts
+    gameoverScreen.style.display = "none";
+
+    gameObj = new Game();
+    gameObj.gameLoop();
+})
 
 window.addEventListener("keydown", (event) => {
     if (event.code === "ArrowLeft") {

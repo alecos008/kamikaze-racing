@@ -5,7 +5,7 @@ class Game {
         this.vehicle = new Vehicle();
         this.obstaclesArr = [];
         this.obstaclesArrPos = [0, 80, 160, 240, 320, 400, 480, 560, 640, 720];
-
+        this.isGameRunning = true;
     }
     generateObstacles = () => {
         
@@ -23,12 +23,25 @@ class Game {
         
         //1. Clearing the canvas
         ctx.clearRect(0, 0, canvas.width, canvas.height)
-        //2. Movements of elements
+
+        //2. Movements of elements or any action
        this.generateObstacles()
 
        this.obstaclesArr.forEach(eachObs => {
            eachObs.moveObstacle();
        })
+
+       this.obstaclesArr.forEach(eachObs => {
+           if (this.vehicle.vehicleObstacleCollision(eachObs)) {
+               //stoping game
+            this.isGameRunning = false;
+            //hidding the canvas
+            canvas.style.display = "none";
+            //displaying gameover screen
+            gameoverScreen.style.display = "flex";
+           }
+       })
+    
 
         //3. drawing elements
          ctx.drawImage(this.bg, 0, 0, canvas.width, canvas.height)
@@ -39,6 +52,10 @@ class Game {
             eachObs.drawObstacle();
         })
         //4. request animation
-        requestAnimationFrame(this.gameLoop)
+        if (this.isGameRunning){
+            requestAnimationFrame(this.gameLoop)
+
+        }
+        
     }
 }

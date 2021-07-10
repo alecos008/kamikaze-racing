@@ -17,8 +17,8 @@ class Game {
             let obstacle = new Obstacle(this.obstaclesArrPos[randIndex]);
     
             this.obstaclesArr.push(obstacle);
+            
         }
-        
     }
 
     gameLoop = () => {
@@ -47,10 +47,18 @@ class Game {
        this.frames++;
        if (this.frames % 60 === 0) {
            this.timeInGame++;
-           console.log(this.timeInGame)
        }
-       
+
+       //Appending the seconds played
        scoreNum.innerHTML = this.timeInGame;
+
+       //Increasing the speed every 10 seconds
+
+       /*
+       if (this.timeInGame % 10 === 0) {
+           obstacle.speed *= 1.1;
+       }
+       */
 
         //3. drawing elements
          ctx.drawImage(this.bg, 0, 0, canvas.width, canvas.height)

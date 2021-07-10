@@ -6,6 +6,8 @@ class Game {
         this.obstaclesArr = [];
         this.obstaclesArrPos = [0, 80, 160, 240, 320, 400, 480, 560, 640, 720];
         this.isGameRunning = true;
+        this.timeInGame = 0;
+        this.frames = 0;
     }
     generateObstacles = () => {
         
@@ -41,6 +43,12 @@ class Game {
             gameoverScreen.style.display = "flex";
            }
        })
+
+       this.frames++;
+       if (this.frames % 60 === 0) {
+           this.timeInGame++;
+           console.log(this.timeInGame)
+       }
     
 
         //3. drawing elements

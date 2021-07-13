@@ -39,3 +39,9 @@ h2 {
 #restart-btn:hover {
     background-color: black;
 }
+#score-board {
+    padding-top: 30px;
+}
+#username-container {
+    padding-top: 10px;
+}

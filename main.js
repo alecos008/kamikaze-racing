@@ -6,10 +6,17 @@ let splashScreen = document.querySelector('#splash-screen');
 let gameoverScreen = document.querySelector('#gameover-screen');
 let startButton = document.querySelector('#start-btn');
 let restartButton = document.querySelector('#restart-btn');
-let scoreElement = document.querySelector('h2')
-let scoreNum = document.querySelector('#score')
+let scoreElement = document.querySelector('h2');
+let scoreNum = document.querySelector('#score');
+let newRow;
+let newUserElement;
+let newTimeElement;
+let newUser;
+let scoreBoardElement = document.querySelector('#score-board');
+let usernameElement = document.querySelector('#username-inp');
 //game variable
 let gameObj;
+
 
 //Add event listeners
 startButton.addEventListener('click', ()=> {
@@ -22,8 +29,15 @@ startButton.addEventListener('click', ()=> {
     // displaying score
     scoreElement.style.display = "flex"
 
+    //creating game
     gameObj = new Game();
     gameObj.gameLoop();
+
+    //creating score tracker
+    newRow = document.createElement('tr');
+    newUserElement = document.createElement('td');
+    newTimeElement = document.createElement('td');
+    newUser = usernameElement.value;
 })
 restartButton.addEventListener('click', () => {
     //Displaying canvas once game starts
@@ -49,3 +63,7 @@ window.addEventListener("keydown", (event) => {
         gameObj.vehicle.moveVehicleUp();
     }
 })
+ 
+
+    
+   

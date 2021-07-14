@@ -25,7 +25,6 @@ class Game {
         this.obstaclesArr.forEach(eachObs => {
             if (this.vehicle.vehicleObstacleCollision(eachObs)) {
              //stoping game
-    
              this.isGameRunning = false;
     
              //hidding the canvas
@@ -51,7 +50,7 @@ class Game {
         ctx.clearRect(0, 0, canvas.width, canvas.height)
 
         //2. Movements of elements or any action
-       this.generateObstacles()
+       this.generateObstacles();
 
        this.obstaclesArr.forEach(eachObs => {
            eachObs.moveObstacle();
@@ -65,6 +64,10 @@ class Game {
 
        //Appending the seconds played
        scoreNum.innerHTML = this.timeInGame;
+
+       //adding the player and seconds played to scoreboard
+       user1TableElement.innerHTML = user1;
+       time1TableElement.innerHTML = `${this.timeInGame} secs`;
 
        //Increasing the speed every 10 seconds
 

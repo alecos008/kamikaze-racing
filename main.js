@@ -8,12 +8,11 @@ let startButton = document.querySelector('#start-btn');
 let restartButton = document.querySelector('#restart-btn');
 let scoreElement = document.querySelector('h2');
 let scoreNum = document.querySelector('#score');
-let newRow;
-let newUserElement;
-let newTimeElement;
-let newUser;
 let scoreBoardElement = document.querySelector('#score-board');
 let usernameElement = document.querySelector('#username-inp');
+let user1;
+let user1TableElement = document.querySelector('#player1');
+let time1TableElement = document.querySelector('#time1')
 //game variable
 let gameObj;
 
@@ -34,10 +33,8 @@ startButton.addEventListener('click', ()=> {
     gameObj.gameLoop();
 
     //creating score tracker
-    newRow = document.createElement('tr');
-    newUserElement = document.createElement('td');
-    newTimeElement = document.createElement('td');
-    newUser = usernameElement.value;
+   
+    user1 = usernameElement.value;
 })
 restartButton.addEventListener('click', () => {
     //Displaying canvas once game starts

@@ -9,6 +9,8 @@ class Game {
         this.timeInGame = 0;
         this.frames = 0;
         this.speedDifficulty = 2;
+        this.audio = new Audio("../audio-files/race-cars-racing.mp3");
+        this.collisionAudio = new Audio("../audio-files/mixkit-truck-crash-with-explosion-1616.wav");
     }
     generateObstacles = () => {
         
@@ -26,14 +28,18 @@ class Game {
             if (this.vehicle.vehicleObstacleCollision(eachObs)) {
              //stoping game
              this.isGameRunning = false;
-    
-             //hidding the canvas
-    
+
+            //pausing bg audio
+            this.audio.pause();
+
+            //starting crash aduio
+            this.collisionAudio.play();
+
+            //hidding the canvas
              canvas.style.display = "none";
     
              //displaying gameover screen
-    
-             gameoverScreen.style.display = "flex";
+     gameoverScreen.style.display = "flex";
     
              //adding the username and score to the table
              newRow.appendChild('newUserElement', 'newTimeElement');
@@ -45,6 +51,9 @@ class Game {
     }
 
     gameLoop = () => {
+
+        
+
         
         //1. Clearing the canvas
         ctx.clearRect(0, 0, canvas.width, canvas.height)
@@ -88,6 +97,8 @@ class Game {
         //4. request animation
         if (this.isGameRunning){
             requestAnimationFrame(this.gameLoop)
+            this.audio.play();
+            this.collisionAudio.pause();
 
         }
         

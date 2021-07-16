@@ -22,6 +22,7 @@ startButton.addEventListener('click', ()=> {
     //Displaying canvas once game starts
     canvas.style.display = "block";
 
+
     //hiding splashScreen once game starts
     splashScreen.style.display = "none";
 

@@ -12,15 +12,22 @@ let scoreBoardElement = document.querySelector('#score-board');
 let usernameElement = document.querySelector('#username-inp');
 let user1;
 let user1TableElement = document.querySelector('#player1');
-let time1TableElement = document.querySelector('#time1')
+let time1TableElement = document.querySelector('#time1');
+
+
 //game variable
 let gameObj;
+
+//
+
 
 
 //Add event listeners
 startButton.addEventListener('click', ()=> {
     //Displaying canvas once game starts
     canvas.style.display = "block";
+    
+   // console.dir(gameObj.audio)
 
 
     //hiding splashScreen once game starts
@@ -41,6 +48,9 @@ restartButton.addEventListener('click', () => {
     //Displaying canvas once game starts
     canvas.style.display = "block";
 
+
+    
+   
     
 
     //hidding gameoverScreen once game starts

@@ -33,6 +33,7 @@ class Game {
             this.audio.pause();
 
             //starting crash aduio
+            this.collisionAudio.volume = 0.5;
             this.collisionAudio.play();
 
             //hidding the canvas
@@ -42,10 +43,7 @@ class Game {
      gameoverScreen.style.display = "flex";
     
              //adding the username and score to the table
-             newRow.appendChild('newUserElement', 'newTimeElement');
-            // newRow.appendChild('newTimeElement');
-             newUserElement.appendChild('newUser');
-             newTimeElement.innerHTML = this.timeInGame;
+             
             }
         })
     }
@@ -97,9 +95,12 @@ class Game {
         //4. request animation
         if (this.isGameRunning){
             requestAnimationFrame(this.gameLoop)
-            this.audio.play();
-            this.collisionAudio.pause();
 
+            //starting bg audio
+            this.audio.volume = 0.2;
+            this.audio.play();
+
+            this.collisionAudio.pause();
         }
         
     }

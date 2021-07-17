@@ -44,4 +44,11 @@ h2 {
 }
 #username-container {
     padding-top: 10px;
+    padding-bottom: 10px;
+}
+#username-inp {
+    height: 50px;
+}
+#time1 {
+    text-align: center;
 }

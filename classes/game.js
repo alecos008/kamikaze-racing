@@ -40,10 +40,24 @@ class Game {
              canvas.style.display = "none";
     
              //displaying gameover screen
-     gameoverScreen.style.display = "flex";
+             gameoverScreen.style.display = "flex";
     
-             //adding the username and score to the table
+             // setting the local storage
+             let maxScore = storage.getItem("storedScore"); // undefined
+
+            //setting the local storage to time in game
+            if (this.timeInGame > maxScore || maxScore === undefined) {
+                storage.setItem("storedScore", this.timeInGame); // 2
+                
+                time1TableElement.innerHTML = this.timeInGame;
+               
+            } else {
+                time1TableElement.innerHTML = maxScore;
+            }
+            
+             console.dir(storage)
              
+    
             }
         })
     }
@@ -71,10 +85,11 @@ class Game {
 
        //Appending the seconds played
        scoreNum.innerHTML = this.timeInGame;
+       
 
        //adding the player and seconds played to scoreboard
        user1TableElement.innerHTML = user1;
-       time1TableElement.innerHTML = `${this.timeInGame} secs`;
+       //time1TableElement.innerHTML = `${this.timeInGame} secs`;
 
        //Increasing the speed every 10 seconds
 

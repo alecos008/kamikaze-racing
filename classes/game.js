@@ -11,6 +11,7 @@ class Game {
         this.speedDifficulty = 2;
         this.audio = new Audio("../audio-files/race-cars-racing.mp3");
         this.collisionAudio = new Audio("../audio-files/mixkit-truck-crash-with-explosion-1616.wav");
+        this.bgAudio = new Audio("../audio-files/YJNDSUP-driving-percussion.mp3")
     }
     generateObstacles = () => {
         
@@ -31,6 +32,7 @@ class Game {
 
             //pausing bg audio
             this.audio.pause();
+            this.bgAudio.pause();
 
             //starting crash aduio
             this.collisionAudio.volume = 0.5;
@@ -112,8 +114,10 @@ class Game {
             requestAnimationFrame(this.gameLoop)
 
             //starting bg audio
-            this.audio.volume = 0.2;
+            this.audio.volume = 0.1;
             this.audio.play();
+            this.bgAudio.volume = 0.2;
+            this.bgAudio.play();
 
             this.collisionAudio.pause();
         }
